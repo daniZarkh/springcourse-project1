@@ -13,12 +13,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+
 import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan("ru.alishev.springcourse")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
+
     private final ApplicationContext applicationContext;
 
     @Autowired
@@ -44,21 +46,24 @@ public class SpringConfig implements WebMvcConfigurer {
         return templateEngine;
     }
 
-    @Bean
+    @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
         resolver.setCharacterEncoding("UTF-8");
+
         registry.viewResolver(resolver);
     }
 
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
+
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/project1");
         dataSource.setUsername("postgres");
-        dataSource.setPassword("password");
+        dataSource.setPassword("postgres");
+
         return dataSource;
     }
 
