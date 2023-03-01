@@ -46,7 +46,7 @@ public class PeopleController {
                          BindingResult bindingResult) {
         personValidator.validate(person, bindingResult);
         if (bindingResult.hasErrors()) {
-            return "peolpe/new";
+            return "people/new";
         }
         personDAO.save(person);
         return "redirect:/people";

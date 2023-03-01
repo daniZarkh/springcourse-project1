@@ -1,7 +1,6 @@
 package ru.alishev.springcourse.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -50,7 +49,7 @@ public class PersonDAO {
     }
 
     public List<Book> getBooksByPerson(int id) {
-        return jdbcTemplate.query("SELECT * FROM person WHERE full_name=?", new Object[]{id},
+        return jdbcTemplate.query("SELECT * FROM book WHERE person_id=?", new Object[]{id},
                 new BeanPropertyRowMapper<>(Book.class));
     }
 }
