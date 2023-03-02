@@ -52,7 +52,7 @@ public class PeopleController {
         return "redirect:/people";
     }
 
-    @PostMapping("/{id}/edit")
+    @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
         model.addAttribute("person", personDAO.show(id));
         return "people/edit";
