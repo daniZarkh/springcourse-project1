@@ -23,7 +23,7 @@ public class PeopleController {
         this.personValidator = personValidator;
     }
 
-    @GetMapping
+    @GetMapping()
     public String index(Model model) {
         model.addAttribute("people", personDAO.index());
         return "people/index";
@@ -41,7 +41,7 @@ public class PeopleController {
         return "people/new";
     }
 
-    @PostMapping
+    @PostMapping()
     public String create(@ModelAttribute("person") @Valid Person person,
                          BindingResult bindingResult) {
         personValidator.validate(person, bindingResult);
