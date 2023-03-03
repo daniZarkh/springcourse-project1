@@ -47,12 +47,11 @@ public class BookController {
 
     @PostMapping()
     public String create(@ModelAttribute("book") Book book,
-                         BindingResult bindingResult,
-                         @PathVariable("id") int id) {
+                         BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "books/edit";
         }
-        bookDAO.update(id, book);
+        bookDAO.save(book);
         return "redirect:/books";
     }
 
