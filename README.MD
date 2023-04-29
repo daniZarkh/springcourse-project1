@@ -1,1 +1,1 @@
-Моя реализация Project 1
+The project demonstrates the basic usage of Spring MVC structure.
