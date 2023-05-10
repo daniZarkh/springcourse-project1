@@ -1,1 +1,1 @@
-The project demonstrates the basic usage of Spring MVC structure.
+The project demonstrates the basic usage of Spring MVC.
