@@ -1,4 +1,4 @@
-The project demonstrates the basic usage of Spring, basic MVC structure, Spring validator, SQL, HQL, Thymeleaf, HTML.
+The project demonstrates basic usage of Spring, MVC structure, validator, SQL, HQL, Thymeleaf, HTML.
 
 1. Artifact deployment using Tomcat v.9 should be set before running the server.
 2. In browser, enter http://localhost:8080/people
